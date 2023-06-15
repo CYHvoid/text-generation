@@ -181,12 +181,11 @@ def main(args):
     if args.method != 'gpt2_ft':
         model.fix_decoder()
     
-    # 模型参数量
+    # 统计模型参数量
     get_parameter_number(model)
-    '''
     for name, param in model.named_parameters():
         if param.requires_grad:
-            print(name)'''
+            print(name)
 
     model.to(args.device)
     no_decay = ['bias', 'LayerNorm.weight']
